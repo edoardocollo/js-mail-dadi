@@ -11,6 +11,7 @@ for (var i = 0; i < listaUtentiAutorizzati.length; i++) {
   var validazione;
   if(listaUtentiAutorizzati[i] == mailUtente ){
     validazione = true;
+    break;
   } else {
     validazione = false;
   }
@@ -32,29 +33,29 @@ if (validazione == true){
 var lancioDado = document.getElementById('lancio_dado');
 lancioDado.addEventListener('click',
   function(){
+
+    // genero i due tiri casuali
     var valoreGiocatore = Math.floor(Math.random() * (6 - 1 + 1) ) + 1;
     console.log(valoreGiocatore);
     var valorePc = Math.floor(Math.random() * (6 - 1 + 1) ) + 1;
     console.log(valorePc);
 
+    // inizzializzo target
     var lancioGiocatore = document.getElementById('lancio_giocatore');
     var lancioPc = document.getElementById('lancio_pc');
     var risultato = document.getElementById('risultato');
+
+    // scrittura valori
     lancioGiocatore.innerHTML = valoreGiocatore;
     lancioPc.innerHTML = valorePc;
+
+    // Stabilire il vincitore, in base a chi fa il punteggio più alto.
     if (valoreGiocatore > valorePc) {
       console.log('hai vinto');
       risultato.innerHTML = 'hai vinto';
     } else {
       console.log('hai perso');
       risultato.innerHTML = 'hai perso';
-
     }
-
-
-
   }
 );
-
-
-// Stabilire il vincitore, in base a chi fa il punteggio più alto.
