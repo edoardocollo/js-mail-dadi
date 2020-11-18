@@ -7,8 +7,8 @@ console.log(mailUtente);
 
 var listaUtentiAutorizzati = ['gigiilbello@gmail.com', 'gordon.freeman@gmail.com', 'valve@gmail.com'];
 
+var validazione;
 for (var i = 0; i < listaUtentiAutorizzati.length; i++) {
-  var validazione;
   if(listaUtentiAutorizzati[i] == mailUtente ){
     validazione = true;
     break;
@@ -53,9 +53,13 @@ lancioDado.addEventListener('click',
     if (valoreGiocatore > valorePc) {
       console.log('hai vinto');
       risultato.innerHTML = 'hai vinto';
-    } else {
+    } else if(valoreGiocatore < valorePc) {
       console.log('hai perso');
       risultato.innerHTML = 'hai perso';
+    }else{
+      console.log('pari');
+      risultato.innerHTML = 'pari';
+
     }
   }
 );
